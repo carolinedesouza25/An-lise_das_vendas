@@ -24,7 +24,7 @@ Observação: A versão em inglês do projeto se encontra ao final do tópico 5 
 - *5 Produtos Menos Vendidos por Receita, Quantidade e Pedidos:* identificar as opções menos populares entre os consumidores.
 
 ### **4. Descrição dos Dados:**
-A base de dados é composta por 12 colunas e 48.621 linhas, é importante frisar que as informações estão em inglês e, para facilitar o entendimento, as descrições de cada coluna serão realizadas abaixo:
+A base de dados é composta por 12 colunas e 48.620 linhas, é importante frisar que as informações estão em inglês e, para facilitar o entendimento, as descrições de cada coluna serão realizadas abaixo:
 
 - *pizza_id:* número identificador da pizza, é único e não se repete;
 - *order_id:* número identificador do pedido é único para cada pedido realizado, porém pode se repetir quando diferentes pizzas são solicitadas dentro do mesmo pedido; 
