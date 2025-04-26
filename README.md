@@ -41,23 +41,41 @@ A base de dados é composta por 12 colunas e 48.620 linhas, é importante frisar
 
 ### SQL 
 
-![Captura de tela 2025-04-09 182246](https://github.com/user-attachments/assets/57fc98f1-fdb9-4d1d-8f44-770deac46783)
+![Captura de tela 2025-04-09 182246](https://github.com/user-attachments/assets/57fc98f1-fdb9-4d1d-8f44-770deac46783) 
+
+Imagem 1
 
 ![Captura de tela 2025-04-09 182225](https://github.com/user-attachments/assets/c0a502c1-64ff-43da-b68d-402f6e884f33)
 
+Imagem 2
+
 ![Captura de tela 2025-04-09 181730](https://github.com/user-attachments/assets/bcc6dc87-9712-49c6-a3d9-4db604292261)
+
+Imagem 3
 
 ![Captura de tela 2025-04-09 180330](https://github.com/user-attachments/assets/a5bb3f9f-3f50-4726-9552-76b99d4b934e)
 
+Imagem 4
+
 ![Captura de tela 2025-04-09 180323](https://github.com/user-attachments/assets/d6bdfae1-8b38-4756-bcff-ed23157811b9)
+
+Imagem 5
 
 ![Captura de tela 2025-04-09 175930](https://github.com/user-attachments/assets/55254403-61eb-47ed-9b1e-035003afb894)
 
+Imagem 6
+
 ![Captura de tela 2025-04-09 175921](https://github.com/user-attachments/assets/da27390d-8527-463d-9712-76c32cd24fb5)
+
+Imagem 7
 
 ![Captura de tela 2025-04-09 174820](https://github.com/user-attachments/assets/d7b140ba-3533-43b9-b783-61f5bc4f148c)
 
+Imagem 8 
+
 ![Captura de tela 2025-04-09 094841](https://github.com/user-attachments/assets/2996f12e-28e0-454b-8a1a-5c3d83d19491)
+
+Imagem 9 
 
 ![Captura de tela 2025-04-09 094659](https://github.com/user-attachments/assets/7a58ce01-0bba-4234-af88-3eec9dd03d78)
 
