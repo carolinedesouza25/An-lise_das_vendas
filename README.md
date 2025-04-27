@@ -41,13 +41,17 @@ A base de dados é composta por 12 colunas e 48.620 linhas, é importante frisar
 
 ### SQL 
 
+![Captura de tela 2025-03-29 135638](https://github.com/user-attachments/assets/44defab7-a408-4239-983e-713a9aaccc83)
+
+Imagem 1 - geral
+
 ![Captura de tela 2025-03-29 141222](https://github.com/user-attachments/assets/d7c2fc7d-de1d-4393-b7a1-cc9e6ed80cad)
 
 Imagem 20 - geral
 
-![Captura de tela 2025-04-08 164547](https://github.com/user-attachments/assets/a46c2956-5fb8-48d8-a470-5c660770602a)
+![Captura de tela 2025-04-09 092803](https://github.com/user-attachments/assets/cf6d572b-3f09-4baa-9538-2e0c87df9e7e)
 
-Imagem 19 - geral
+Imagem 15 - geral
 
 ![Captura de tela 2025-04-09 083602](https://github.com/user-attachments/assets/12b6bdd5-3506-4932-b5da-95fd2005c4e5)
 
@@ -105,17 +109,21 @@ Imagem 2 - Porcentagem de Vendas pela Categoria de Pizza
 
 Imagem 30 - Porcentagem de Vendas pela Categoria de Pizza
 
+![Captura de tela 2025-04-09 093650](https://github.com/user-attachments/assets/ebd2a8dd-40eb-4a8e-88fa-d45e32a80dba)
+
+Imagem 12 - Top 5
+
 ![Captura de tela 2025-04-12 121128](https://github.com/user-attachments/assets/6de4fad9-9f95-49b4-be12-bf47586d52cc)
 
-Imagem 29
+Imagem 29 - Top 5
 
 ![Captura de tela 2025-04-12 130935](https://github.com/user-attachments/assets/6095eb6c-3027-4284-9656-ffa11ecbc850)
 
-Imagem 28
+Imagem 28 - Top 5 
 
 ![Captura de tela 2025-04-12 131425](https://github.com/user-attachments/assets/db64fe14-b33f-4b9d-809a-105c9d2a68d5)
 
-Imagem 27
+Imagem 27 - Top 5 
 
 ![Captura de tela 2025-04-13 162738](https://github.com/user-attachments/assets/94c8b0e1-807d-402e-af4a-5e079d0ad3d1)
 
@@ -128,22 +136,6 @@ Imagem 33
 ![Captura de tela 2025-04-09 175930](https://github.com/user-attachments/assets/55254403-61eb-47ed-9b1e-035003afb894)
 
 Imagem 6
-
-![Captura de tela 2025-04-09 094659](https://github.com/user-attachments/assets/7a58ce01-0bba-4234-af88-3eec9dd03d78)
-
-Imagem 10
-
-![Captura de tela 2025-04-09 094519](https://github.com/user-attachments/assets/26be2e95-34d6-4050-b540-e19a634557e1)
-
-Imagem 11
-
-![Captura de tela 2025-04-09 093650](https://github.com/user-attachments/assets/ebd2a8dd-40eb-4a8e-88fa-d45e32a80dba)
-
-Imagem 12
-
-![Captura de tela 2025-04-09 092803](https://github.com/user-attachments/assets/cf6d572b-3f09-4baa-9538-2e0c87df9e7e)
-
-Imagem 15
 
 ![Captura de tela 2025-04-12 145725](https://github.com/user-attachments/assets/fa16b855-c3b1-43b7-9ab6-e7b7ee7bd2f0)
 
