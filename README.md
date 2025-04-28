@@ -157,43 +157,43 @@ Imagem 22
 
 ### BI
 
-![Captura de tela 2025-04-14 024044](https://github.com/user-attachments/assets/79b2fca2-2b3f-4dbc-808a-9681963ea693)
+![Captura de tela 2025-04-14 022015](https://github.com/user-attachments/assets/1130e42c-c4fc-4e39-9cfc-473406fe1f2e)
 
 Imagem 23
 
-![Captura de tela 2025-04-14 023916](https://github.com/user-attachments/assets/224e764f-7862-49c9-9163-2e6800ad0cf1)
+![Captura de tela 2025-04-14 024044](https://github.com/user-attachments/assets/79b2fca2-2b3f-4dbc-808a-9681963ea693)
 
 Imagem 24
 
-![Captura de tela 2025-04-14 023656](https://github.com/user-attachments/assets/3f0a063f-e374-44c6-aef9-66155c495f81)
+![Captura de tela 2025-04-14 023916](https://github.com/user-attachments/assets/224e764f-7862-49c9-9163-2e6800ad0cf1)
 
 Imagem 25
 
-![Captura de tela 2025-04-14 023621](https://github.com/user-attachments/assets/91e43f44-7349-49b6-9b01-d003a095bdcf)
+![Captura de tela 2025-04-14 023656](https://github.com/user-attachments/assets/3f0a063f-e374-44c6-aef9-66155c495f81)
 
 Imagem 26
 
-![Captura de tela 2025-04-15 203533](https://github.com/user-attachments/assets/db7bd5e8-a266-4ac3-bd4d-481be16135f7) 
+![Captura de tela 2025-04-14 023621](https://github.com/user-attachments/assets/91e43f44-7349-49b6-9b01-d003a095bdcf)
 
 Imagem 27
 
-![Captura de tela 2025-04-15 203429](https://github.com/user-attachments/assets/74116de0-40cc-418c-9a71-0b6df1b1f0bd)
+![Captura de tela 2025-04-15 203533](https://github.com/user-attachments/assets/db7bd5e8-a266-4ac3-bd4d-481be16135f7) 
 
 Imagem 28
 
-![Captura de tela 2025-04-15 201229](https://github.com/user-attachments/assets/48f06bf2-6f53-41d6-963d-5f99120beb20)
+![Captura de tela 2025-04-15 203429](https://github.com/user-attachments/assets/74116de0-40cc-418c-9a71-0b6df1b1f0bd)
 
 Imagem 29
 
-![Captura de tela 2025-04-15 194045](https://github.com/user-attachments/assets/19d4d58d-c6ed-4da9-b540-140d48468a7c)
+![Captura de tela 2025-04-15 201229](https://github.com/user-attachments/assets/48f06bf2-6f53-41d6-963d-5f99120beb20)
 
 Imagem 30
 
-![Captura de tela 2025-04-15 194034](https://github.com/user-attachments/assets/5a9c7bfd-db94-4976-9427-0dcd7945491d)
+![Captura de tela 2025-04-15 194045](https://github.com/user-attachments/assets/19d4d58d-c6ed-4da9-b540-140d48468a7c)
 
 Imagem 31
 
-![Captura de tela 2025-04-14 022015](https://github.com/user-attachments/assets/1130e42c-c4fc-4e39-9cfc-473406fe1f2e)
+![Captura de tela 2025-04-15 194034](https://github.com/user-attachments/assets/5a9c7bfd-db94-4976-9427-0dcd7945491d)
 
 Imagem 32
 
