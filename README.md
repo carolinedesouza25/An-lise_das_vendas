@@ -39,7 +39,15 @@ A base de dados é composta por 12 colunas e 48.620 linhas, é importante frisar
 - *pizza_ingredients:* ingredientes da pizza; 
 - *pizza_name:* nome da pizza.
 
-### SQL 
+### **5. Análise dos dados:**
+
+
+#### **5.1 SQL:**
+
+O banco de dados foi pré-processado em SQL para ajustar o tipo das colunas total_price e unit_price, pois, apesar de estarem definidas como _float_, não eram tratadas corretamente como valores decimais; por isso foi necessária a conversão desses campos e a inclusão de duas colunas adicionais para armazenar as versões devidamente ajustadas. Em seguida, executaram-se queries exploratórias para mapear padrões de vendas, calcular métricas iniciais e validar a consistência geral do conjunto de dados, o que permitiu compreender melhor o volume de pedidos, o comportamento dos preços e possíveis discrepâncias. Com base nessa investigação, definiram-se as principais métricas a serem utilizadas no dashboard — como receita total, ticket médio e quantidade de itens vendidos — além das dimensões temporais e categóricas que dariam suporte às visualizações. Assim, apenas os dados já tipados e enriquecidos foram carregados no Power BI.
+
+
+Nas imagens 1 e 2, eu converti pizza_id e order_id de smallint para int para lidar com um volume maior de registros conforme o banco cresce, evitando ter que alterar o tipo no futuro, visto que smallint tem o alcance que vai de –32.768 a 32.767, então converti para int, que suporta de –2.147.483.648 a 2.147.483.647. Também mudei pizza_name_id, pizza_size, pizza_category e pizza_name de nvarchar(50) para varchar(50) porque não usamos caracteres especiais, o que reduz o uso de espaço e deixa as consultas mais rápidas. Por fim, alterei pizza_ingredients de nvarchar(100) para varchar(200) para permitir descrições mais completas dos ingredientes e tornar mais eficiente a indexação e busca nesses textos.
 
 ![Captura de tela 2025-03-29 135638](https://github.com/user-attachments/assets/44defab7-a408-4239-983e-713a9aaccc83)
 
@@ -47,103 +55,99 @@ Imagem 1 - geral
 
 ![Captura de tela 2025-03-29 141222](https://github.com/user-attachments/assets/d7c2fc7d-de1d-4393-b7a1-cc9e6ed80cad)
 
-Imagem 20 - geral
+Imagem 2 - geral
 
 ![Captura de tela 2025-04-09 092803](https://github.com/user-attachments/assets/cf6d572b-3f09-4baa-9538-2e0c87df9e7e)
 
-Imagem 15 - geral
+Imagem 3 - geral
 
 ![Captura de tela 2025-04-09 083602](https://github.com/user-attachments/assets/12b6bdd5-3506-4932-b5da-95fd2005c4e5)
 
-Imagem 22 - geral
+Imagem 4 - geral
 
 ![Captura de tela 2025-04-09 085131](https://github.com/user-attachments/assets/8421e688-ce92-41a8-95c5-19460b37998a)
 
-Imagem 24 - geral
+Imagem 5 - geral
 
 ![Captura de tela 2025-04-09 090911](https://github.com/user-attachments/assets/93d547fd-a564-4f0c-a7cc-255d175e86e0)
 
-Imagem 18 - geral
+Imagem 6 - geral
 
 ![Captura de tela 2025-04-09 092545](https://github.com/user-attachments/assets/e26eecd4-3218-4570-8788-204b2f182480)
 
-Imagem 17 -geral 
+Imagem 7 -geral 
 
 ![Captura de tela 2025-04-09 093012](https://github.com/user-attachments/assets/d1e216d1-2220-4739-9138-47f994f85027)
 
-Imagem 14 - geral
+Imagem 8 - geral
 
 ![Captura de tela 2025-04-09 093257](https://github.com/user-attachments/assets/f07dc759-da74-4f16-9dd6-a2bd78e91a05)
 
-Imagem 13 - geral
+Imagem 9 - geral
 
 ![Captura de tela 2025-04-09 094841](https://github.com/user-attachments/assets/2996f12e-28e0-454b-8a1a-5c3d83d19491)
 
-Imagem 9 - geral 
+Imagem 10 - geral 
 
 ![Captura de tela 2025-04-09 174820](https://github.com/user-attachments/assets/d7b140ba-3533-43b9-b783-61f5bc4f148c)
 
-Imagem 8 - Tendência Diária do Total de Pedidos
+Imagem 11 - Tendência Diária do Total de Pedidos
 
 ![Captura de tela 2025-04-09 175921](https://github.com/user-attachments/assets/da27390d-8527-463d-9712-76c32cd24fb5)
 
-Imagem 7 - Tendência Mensal do Total de Pedidos
+Imagem 12 - Tendência Mensal do Total de Pedidos
 
 ![Captura de tela 2025-04-09 180323](https://github.com/user-attachments/assets/d6bdfae1-8b38-4756-bcff-ed23157811b9)
 
-Imagem 5 - Tendência Mensal do Total de Pedidos
+Imagem 13 - Tendência Mensal do Total de Pedidos
 
 ![Captura de tela 2025-04-09 181730](https://github.com/user-attachments/assets/bcc6dc87-9712-49c6-a3d9-4db604292261)
 
-Imagem 3 - Porcentagem de Vendas pela Categoria de Pizza
+Imagem 14 - Porcentagem de Vendas pela Categoria de Pizza
 
 ![Captura de tela 2025-04-09 182246](https://github.com/user-attachments/assets/57fc98f1-fdb9-4d1d-8f44-770deac46783) 
 
-Imagem 1 - Porcentagem de Vendas pela Categoria de Pizza
+Imagem 15 - Porcentagem de Vendas pela Categoria de Pizza
 
 ![Captura de tela 2025-04-09 182225](https://github.com/user-attachments/assets/c0a502c1-64ff-43da-b68d-402f6e884f33)
 
-Imagem 2 - Porcentagem de Vendas pela Categoria de Pizza
+Imagem 16 - Porcentagem de Vendas pela Categoria de Pizza
 
 ![Captura de tela 2025-04-12 115832](https://github.com/user-attachments/assets/f7b1c564-2eb3-4211-8e80-7955347443b3)
 
-Imagem 30 - Porcentagem de Vendas pela Categoria de Pizza
+Imagem 17 - Porcentagem de Vendas pela Categoria de Pizza
 
 ![Captura de tela 2025-04-09 093650](https://github.com/user-attachments/assets/ebd2a8dd-40eb-4a8e-88fa-d45e32a80dba)
 
-Imagem 12 - Top 5
+Imagem 18 - Top 5
 
 ![Captura de tela 2025-04-12 121128](https://github.com/user-attachments/assets/6de4fad9-9f95-49b4-be12-bf47586d52cc)
 
-Imagem 29 - Top 5
+Imagem 19 - Top 5
 
 ![Captura de tela 2025-04-12 130935](https://github.com/user-attachments/assets/6095eb6c-3027-4284-9656-ffa11ecbc850)
 
-Imagem 28 - Top 5 
+Imagem 20 - Top 5 
 
 ![Captura de tela 2025-04-12 131425](https://github.com/user-attachments/assets/db64fe14-b33f-4b9d-809a-105c9d2a68d5)
 
-Imagem 27 - Top 5 
+Imagem 21 - Top 5 
 
 ![Captura de tela 2025-04-13 162738](https://github.com/user-attachments/assets/94c8b0e1-807d-402e-af4a-5e079d0ad3d1)
 
-Imagem 32
+Imagem 22 - top 5
 
 ![Captura de tela 2025-04-13 162717](https://github.com/user-attachments/assets/a546eed9-ba41-4fdb-8c1f-ca5fdc671e53)
 
-Imagem 33
-
-![Captura de tela 2025-04-09 175930](https://github.com/user-attachments/assets/55254403-61eb-47ed-9b1e-035003afb894)
-
-Imagem 6
+Imagem 33 - top 5
 
 ![Captura de tela 2025-04-12 145725](https://github.com/user-attachments/assets/fa16b855-c3b1-43b7-9ab6-e7b7ee7bd2f0)
 
-Imagem 31
+Imagem 31 - top 5
 
 ![Captura de tela 2025-04-12 145745](https://github.com/user-attachments/assets/71aac96c-1c18-4146-bb2b-97e584abb7ff)
 
-Imagem 34
+Imagem 34 - top 5
 
 
 
