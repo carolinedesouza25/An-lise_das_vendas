@@ -47,7 +47,7 @@ A base de dados é composta por 12 colunas e 48.620 linhas, é importante frisar
 O banco de dados foi pré-processado em SQL para ajustar o tipo das colunas total_price e unit_price, pois, apesar de estarem definidas como _float_, não eram tratadas corretamente como valores decimais; por isso foi necessária a conversão desses campos e a inclusão de duas colunas adicionais para armazenar as versões devidamente ajustadas. Em seguida, executaram-se queries exploratórias para mapear padrões de vendas, calcular métricas iniciais e validar a consistência geral do conjunto de dados, o que permitiu compreender melhor o volume de pedidos, o comportamento dos preços e possíveis discrepâncias. Com base nessa investigação, definiram-se as principais métricas a serem utilizadas no dashboard — como receita total, ticket médio e quantidade de itens vendidos — além das dimensões temporais e categóricas que dariam suporte às visualizações. Assim, apenas os dados já tipados e enriquecidos foram carregados no Power BI.
 
 
-Nas imagens 1 e 2, eu converti pizza_id e order_id de smallint para int para lidar com um volume maior de registros conforme o banco cresce, evitando ter que alterar o tipo no futuro, visto que smallint tem o alcance que vai de –32.768 a 32.767, então converti para int, que suporta de –2.147.483.648 a 2.147.483.647. Também mudei pizza_name_id, pizza_size, pizza_category e pizza_name de nvarchar(50) para varchar(50) porque não usamos caracteres especiais, o que reduz o uso de espaço e deixa as consultas mais rápidas. Por fim, alterei pizza_ingredients de nvarchar(100) para varchar(200) para permitir descrições mais completas dos ingredientes e tornar mais eficiente a indexação e busca nesses textos.
+- Nessa etapa, foram convertidas as colunas pizza_id e order_id de smallint para int (para suportar valores acima de 32 000 registros, evitando nova necessidade de ajuste de tipo). Em seguida, pizza_name_id, pizza_size, pizza_category e pizza_name passaram de nvarchar(50) para varchar(50) (já que não é preciso armazenar caracteres Unicode especiais, como emojis ou alfabetos não latinos), reduzindo o espaço ocupado e tornando as consultas mais rápidas. Por fim, pizza_ingredients foi alterada de nvarchar(100) para varchar(200), para acomodar descrições mais completas dos ingredientes, o que otimiza a indexação e a busca de texto nessa coluna.
 
 ![Captura de tela 2025-03-29 135638](https://github.com/user-attachments/assets/44defab7-a408-4239-983e-713a9aaccc83)
 
@@ -57,9 +57,14 @@ Imagem 1 - geral
 
 Imagem 2 - geral
 
+- Na imagem três, percebe-se que um mesmo pedido pode conter mais de um tipo de pizza, o que é relevante para a análise, pois o total de pedidos difere da soma da quantidade de pizzas vendidas.
+
+  
 ![Captura de tela 2025-04-09 092803](https://github.com/user-attachments/assets/cf6d572b-3f09-4baa-9538-2e0c87df9e7e)
 
 Imagem 3 - geral
+
+- Nas imagens quatro e cinco é mostrada a etapa em que foram criadas duas novas colunas na tabela: valor_numerico e valor_numerico2, ambas no formato DECIMAL(10,2), para corrigir problemas nos campos total_price e unit_price, que, apesar de estarem como float, não eram lidos corretamente como números decimais. Primeiro, foi feito o ajuste substituindo as vírgulas por pontos nos valores originais, utilizando as funções REPLACE e CAST para garantir o formato numérico correto. Depois, os dados foram atualizados nas novas colunas, possibilitando cálculos futuros mais confiáveis e evitando erros de leitura e arredondamento nas análises feitas posteriormente no Power BI.
 
 ![Captura de tela 2025-04-09 083602](https://github.com/user-attachments/assets/12b6bdd5-3506-4932-b5da-95fd2005c4e5)
 
@@ -68,6 +73,8 @@ Imagem 4 - geral
 ![Captura de tela 2025-04-09 085131](https://github.com/user-attachments/assets/8421e688-ce92-41a8-95c5-19460b37998a)
 
 Imagem 5 - geral
+
+- De acordo com as imagens seis, sete, oito, nove e dez, foram obtidas as principais métricas do banco de dados, a partir das queries enviadas na ordem. Foi utilizada a função SUM(total_price) para calcular a receita total gerada pelas vendas, consolidando todo o valor financeiro movimentado. Em seguida, a divisão entre a soma do total_price e a contagem distinta de order_id permitiu encontrar o valor médio por pedido, o que mostra o ticket médio gasto pelos clientes. Também foi realizada a soma da coluna quantity para indicar a quantidade total de pizzas vendidas no período, trazendo uma visão do volume operacional. A contagem distinta de order_id forneceu o número total de pedidos feitos, informação essencial para a análise de desempenho e para os cruzamentos posteriores com outras variáveis. Por fim, na imagem dez, foi calculada a média de pizzas por pedido utilizando o cast duplo, que transforma tanto a soma da quantidade de pizzas quanto o número de pedidos em valores decimais antes da divisão. Essa abordagem evita problemas de arredondamento e garante que o resultado da média seja mais preciso
 
 ![Captura de tela 2025-04-09 090911](https://github.com/user-attachments/assets/93d547fd-a564-4f0c-a7cc-255d175e86e0)
 
@@ -89,9 +96,13 @@ Imagem 9 - geral
 
 Imagem 10 - geral 
 
+- A consulta abaixo teve como objetivo analisar a distribuição dos pedidos por dia da semana e, assim, fornecer o número de pedidos feitos em cada dia. Ela é útil para identificar quais dias da semana têm maior volume de vendas, o que permite otimizar estratégias de marketing, produção e atendimento de acordo com os picos de demanda. Dessa forma, é possível planejar melhor os recursos e melhorar a experiência do cliente em dias de maior movimento.
+
 ![Captura de tela 2025-04-09 174820](https://github.com/user-attachments/assets/d7b140ba-3533-43b9-b783-61f5bc4f148c)
 
 Imagem 11 - Tendência Diária do Total de Pedidos
+
+- Na imagem doze, função DATENAME(MONTH, order_date) é utilizada para extrair o nome do mês a partir da coluna order_date, enquanto COUNT(DISTINCT order_id) conta o número de pedidos distintos realizados em cada mês. A cláusula GROUP BY agrupa os dados por nome do mês e o DATEPART(MONTH, order_date) é empregado para garantir a ordenação correta dos meses, considerando a sequência do calendário. O resultado final da consulta é uma lista com os meses do ano e a quantidade de pedidos distintos realizados em cada um deles, ordenada pela sequência dos meses. Com base nisso, essa análise é útil para identificar padrões de vendas ao longo do ano. 
 
 ![Captura de tela 2025-04-09 175921](https://github.com/user-attachments/assets/da27390d-8527-463d-9712-76c32cd24fb5)
 
@@ -101,21 +112,27 @@ Imagem 12 - Tendência Mensal do Total de Pedidos
 
 Imagem 13 - Tendência Mensal do Total de Pedidos
 
+- A query apresentada tem como objetivo calcular a receita total de cada categoria de pizza e a participação percentual de cada uma nas vendas totais. A função SUM(total_price) soma a receita gerada por cada categoria e, em seguida, calcula a porcentagem de cada categoria em relação à receita global, dividindo a soma de cada categoria pela receita total e multiplicando por 100. A cláusula GROUP BY agrupa os dados por categoria de pizza, permitindo a análise da contribuição de cada uma para o total de vendas.
+
 ![Captura de tela 2025-04-09 181730](https://github.com/user-attachments/assets/bcc6dc87-9712-49c6-a3d9-4db604292261)
 
 Imagem 14 - Porcentagem de Vendas pela Categoria de Pizza
 
-![Captura de tela 2025-04-09 182246](https://github.com/user-attachments/assets/57fc98f1-fdb9-4d1d-8f44-770deac46783) 
-
-Imagem 15 - Porcentagem de Vendas pela Categoria de Pizza
-
-![Captura de tela 2025-04-09 182225](https://github.com/user-attachments/assets/c0a502c1-64ff-43da-b68d-402f6e884f33)
-
-Imagem 16 - Porcentagem de Vendas pela Categoria de Pizza
+- De acordo com as queries das imagens quinze, dezesseis e dezessete, foram obtidas as principais métricas do banco de dados relacionadas à receita e desempenho das vendas. A primeira consulta utilizou a função SUM(total_price) para calcular a receita total gerada por cada categoria de pizza, consolidando o valor financeiro das vendas. Em seguida, foi calculada a participação percentual de cada categoria em relação ao total de vendas, oferecendo uma visão detalhada da contribuição de cada categoria para a receita global. A segunda query seguiu uma lógica similar, mas focada nos tamanhos de pizza, permitindo entender a distribuição da receita entre os diferentes tamanhos. Além disso, as consultas subsequentes analisaram o desempenho de vendas das categorias de pizza nos meses de julho e outubro, identificando os meses com pior e melhor desempenho e calculando a quantidade total de pizzas vendidas por categoria em cada um desses meses. Essas duas análises mostram o impacto das vendas de julho e outubro, ajudando a identificar padrões sazonais e a planejar ações estratégicas.
 
 ![Captura de tela 2025-04-12 115832](https://github.com/user-attachments/assets/f7b1c564-2eb3-4211-8e80-7955347443b3)
 
+Imagem 15 - Porcentagem de Vendas pela Categoria de Pizza
+
+![Captura de tela 2025-04-09 182246](https://github.com/user-attachments/assets/57fc98f1-fdb9-4d1d-8f44-770deac46783) 
+
+Imagem 16 - Porcentagem de Vendas pela Categoria de Pizza
+
+![Captura de tela 2025-04-09 182225](https://github.com/user-attachments/assets/c0a502c1-64ff-43da-b68d-402f6e884f33)
+
 Imagem 17 - Porcentagem de Vendas pela Categoria de Pizza
+
+- a
 
 ![Captura de tela 2025-04-09 093650](https://github.com/user-attachments/assets/ebd2a8dd-40eb-4a8e-88fa-d45e32a80dba)
 
@@ -139,15 +156,15 @@ Imagem 22 - top 5
 
 ![Captura de tela 2025-04-13 162717](https://github.com/user-attachments/assets/a546eed9-ba41-4fdb-8c1f-ca5fdc671e53)
 
-Imagem 33 - top 5
+Imagem 23 - top 5
 
 ![Captura de tela 2025-04-12 145725](https://github.com/user-attachments/assets/fa16b855-c3b1-43b7-9ab6-e7b7ee7bd2f0)
 
-Imagem 31 - top 5
+Imagem 24 - top 5
 
 ![Captura de tela 2025-04-12 145745](https://github.com/user-attachments/assets/71aac96c-1c18-4146-bb2b-97e584abb7ff)
 
-Imagem 34 - top 5
+Imagem 25 - top 5
 
 
 
