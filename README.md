@@ -3,8 +3,6 @@
 ### **1. Objetivo:**
 Esse projeto tem como objetivo identificar e analisar quantitativa e qualitativamente as preferências dos consumidores da empresa. Diante disso, foram realizados os processos de extração, limpeza e visualização dos dados para, assim, facilitar a formulação de insights que auxiliem a otimização e proposição de estratégias mais adequadas a realidade atual do negócio. A base de dados utilizada foi obtida por meio do Kaggle, o link se encontra a seguir:  https://www.kaggle.com/datasets/nextmillionaire/pizza-sales-dataset; o arquivo xlsl está disponível nesse repositório. 
 
-Observação: A versão em inglês do projeto se encontra ao final do tópico 5 (Análise SWOT).
-
 ### **2. KPIs:**
 
 - *Receita Total:* a soma do valor arrecadado com todos os pedidos atendidos;
@@ -155,11 +153,15 @@ Imagem 21
 Imagem 22
 
 
-### BI
+#### BI
+
+- Na imagem vinte e três, foram realizadas alterações no banco de dados com o objetivo de facilitar o entendimento e a compreensão na montagem do dashboard. Entre as principais mudanças, destaca-se a atualização dos valores referentes ao tamanho das pizzas: "S" foi alterado para "Pequena", "M" para "Média", "XL" para "Grande" e "XXL" para "Extra Grande". Essas correções garantem uma melhor organização dos dados, proporcionando mais clareza e consistência na análise das informações.
 
 ![Captura de tela 2025-04-14 022015](https://github.com/user-attachments/assets/1130e42c-c4fc-4e39-9cfc-473406fe1f2e)
 
 Imagem 23
+
+- Nas imagens vinte e quatro a vinte e sete, foram criadas medidas em DAX para calcular os principais indicadores de desempenho de vendas. Na imagem vinte e quatro, a medida "Total de Pizzas Vendidas" foi desenvolvida utilizando a função SUM sobre a coluna quantity da tabela pizza_sales, permitindo identificar o volume total de pizzas comercializadas. Em seguida, na imagem vinte e cinco, foi criada a medida "Valor Médio do Pedido", que divide a medida [Receita Total] pela medida [Pedidos Totais], fornecendo o valor médio gasto por pedido. Já na imagem vinte e seis, a medida "Receita Total" foi construída utilizando novamente a função SUM, dessa vez aplicada à coluna valor_numerico, consolidando toda a receita gerada pelas vendas. Por fim, na imagem vinte e sete, a medida "Pedidos Totais" foi elaborada com a função DISTINCTCOUNT sobre a coluna order_id, contabilizando apenas pedidos únicos para garantir a precisão da análise. Essas medidas oferecem uma visão completa do desempenho financeiro e operacional do negócio, servindo de base para a construção de indicadores no dashboard.
 
 ![Captura de tela 2025-04-14 024044](https://github.com/user-attachments/assets/79b2fca2-2b3f-4dbc-808a-9681963ea693)
 
@@ -177,6 +179,8 @@ Imagem 26
 
 Imagem 27
 
+- Nas imagens vinte e oito e vinte e nove, foi realizada a codificação dos meses do ano em formato numérico. Para isso, foi criada uma nova coluna em que o mês de janeiro foi associado ao número 1, fevereiro ao número 2, e assim sucessivamente até dezembro. Essa padronização facilita a organização cronológica dos dados e possibilita a criação de visualizações mais precisas e intuitivas
+
 ![Captura de tela 2025-04-15 203533](https://github.com/user-attachments/assets/db7bd5e8-a266-4ac3-bd4d-481be16135f7) 
 
 Imagem 28
@@ -184,6 +188,8 @@ Imagem 28
 ![Captura de tela 2025-04-15 203429](https://github.com/user-attachments/assets/74116de0-40cc-418c-9a71-0b6df1b1f0bd)
 
 Imagem 29
+
+- Foi criada uma coluna condicional com o objetivo de melhorar a visualização dos dados, abreviando os nomes dos dias da semana. Por exemplo, "Sexta-feira" foi reduzido para "Sex" e "Segunda-feira" para "Seg", proporcionando uma apresentação mais limpa e compacta nas visualizações do dashboard.
 
 ![Captura de tela 2025-04-15 201229](https://github.com/user-attachments/assets/48f06bf2-6f53-41d6-963d-5f99120beb20)
 
@@ -197,6 +203,8 @@ Imagem 31
 
 Imagem 32
 
+Estes foram o dashboard finais desenvolvidos a partir das análises realizadas: 
+
 ![Captura de tela 2025-04-24 165244](https://github.com/user-attachments/assets/8620a106-7dfd-442e-8d4c-558a8a7317d9)
 
 Imagem 33
@@ -204,3 +212,26 @@ Imagem 33
 ![Captura de tela 2025-04-24 165339](https://github.com/user-attachments/assets/f10bc866-5d6b-42d7-a3b7-c64eb330b1a0)
 
 Imagem 34
+
+### Insights
+
+1. Visão Geral das Vendas:  
+- A receita total gerada foi de R$ 817.860,05.  
+- O valor médio por pedido foi de R$ 38,31.  
+- Foram vendidas 49.574 pizzas no total, com 21.350 pedidos distintos, resultando numa média de 2,32 pizzas por pedido.
+
+2. Padrões de Demanda:  
+- Dias com maior demanda: quinta, sexta e sábado concentraram o maior volume de pedidos, indicando a necessidade de reforço operacional nesses dias.  
+- Meses com mais pedidos: janeiro e julho se destacaram como os meses com maior volume de vendas.
+
+3. Categorias e Tamanhos de Pizza:  
+- A categoria "Classic" foi a que mais contribuiu para a receita e quantidade de pizzas vendidas, representando 26,9% das vendas.  
+- O tamanho de pizza "Grande" foi o mais vendido, representando 45,9% do total, indicando uma preferência clara dos clientes por tamanhos maiores.
+
+4. Análise de Performance (Melhores e Piores Resultados):  
+- Melhor performance em receita: a "Thai Chicken Pizza" liderou em geração de receita.  
+- Melhor performance em quantidade vendida: a "Classic Deluxe Pizza" foi a mais vendida em unidades e também liderou em número total de pedidos.  
+- Pior performance em receita e quantidade: a "Brie Carre Pizza" apresentou os piores resultados tanto em receita quanto em número de pedidos e unidades vendidas.
+
+5. Top 5 e Bottom 5: 
+- As análises de Top 5 e Bottom 5 para receita, quantidade e pedidos mostram claramente quais produtos impulsionam as vendas e quais precisam de atenção ou reavaliação.
