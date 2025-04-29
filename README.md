@@ -234,4 +234,4 @@ Imagem 34
 - Pior performance em receita e quantidade: a "Brie Carre Pizza" apresentou os piores resultados tanto em receita quanto em número de pedidos e unidades vendidas.
 
 5. Top 5 e Bottom 5: 
-- As análises de Top 5 e Bottom 5 para receita, quantidade e pedidos mostram claramente quais produtos impulsionam as vendas e quais precisam de atenção ou reavaliação.
+- As análises de Top 5 e Bottom 5 revelaram os produtos com melhor e pior desempenho em diferentes métricas de avaliação. Entre as pizzas com maior geração de receita, destacaram-se aquelas que combinam ingredientes premium e sabores mais tradicionais, refletindo uma maior disposição dos clientes em pagar por opções de maior valor agregado. No ranking de quantidade vendida, as pizzas mais populares demonstraram apelo amplo, sendo escolhidas frequentemente em diferentes momentos de consumo.
